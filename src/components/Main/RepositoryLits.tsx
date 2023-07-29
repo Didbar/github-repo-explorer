@@ -13,6 +13,8 @@ const RepositoryLits = ({ repositoryList }: RepositoryLitsProps) => {
 
   return (
     <VStack
+      w='100%'
+      overflow='scroll'
       p='1rem 0.5rem'
       bg={AccordionPanelBackground}
       align='flex-start'

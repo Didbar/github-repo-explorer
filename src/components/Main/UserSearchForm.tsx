@@ -1,16 +1,15 @@
 import { FormControl, Input, Button } from '@chakra-ui/react'
 import { FormEvent, useRef } from 'react'
+import useUserQueryStore from '../../store'
 
-interface Props {
-  onSearch: (username: string) => void
-}
-const UserSearchForm = ({ onSearch }: Props) => {
+const UserSearchForm = () => {
   const usernameRef = useRef<HTMLInputElement>(null)
+  const setSearchedUser = useUserQueryStore((s) => s.setSearchedUser)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (usernameRef.current) {
-      onSearch(usernameRef.current.value)
+      setSearchedUser(usernameRef.current.value)
       usernameRef.current.value = ''
     }
   }

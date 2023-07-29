@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 const BASE_URL = 'https://api.github.com'
 const ACCESS_TOKEN = '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'
@@ -28,17 +28,9 @@ export interface FetchResponseUser {
 }
 
 class UserClient {
-  searchUsers = (username: string) => {
-    if (!username)
-      return {
-        total_count: 0,
-        items: []
-      }
-
+  searchUsers = (config: AxiosRequestConfig) => {
     return axiosInstance
-      .get<FetchResponseUser>(
-        `/search/users?q=${encodeURIComponent(username)}&per_page=5`
-      )
+      .get<FetchResponseUser>('/search/users', config)
       .then((res) => res.data)
   }
 
