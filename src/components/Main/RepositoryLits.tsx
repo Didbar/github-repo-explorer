@@ -1,7 +1,8 @@
 import { Text, VStack, useColorModeValue } from '@chakra-ui/react'
-import Repository from './Repository'
 import { Fragment } from 'react'
+import { NO_DATA_AVAILABLE } from '../../constants'
 import GitHubRepository from '../../entities/Repository'
+import Repository from './Repository'
 
 interface RepositoryLitsProps {
   repositoryList: GitHubRepository[]
@@ -9,7 +10,7 @@ interface RepositoryLitsProps {
 const RepositoryLits = ({ repositoryList }: RepositoryLitsProps) => {
   const AccordionPanelBackground = useColorModeValue('gray.200', 'gray.900')
 
-  if (repositoryList.length === 0) return <Text>No data available</Text>
+  if (repositoryList.length === 0) return <Text>{NO_DATA_AVAILABLE}</Text>
 
   return (
     <VStack

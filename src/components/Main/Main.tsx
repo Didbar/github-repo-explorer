@@ -4,11 +4,11 @@ import Loader from '../common/Loader'
 import UserList from './UserList'
 import UserSearchForm from './UserSearchForm'
 import Error from '../common/Error'
-import { NoSearchQueryText } from '../../constants'
+import { NO_SEARCH_QUERY_TEXT } from '../../constants'
 
 const Main = () => {
   const { data, error, isLoading, isFetching } = useUsers()
-  const noDataAvailable = <Text>{NoSearchQueryText}</Text>
+  const noDataAvailable = <Text>{NO_SEARCH_QUERY_TEXT}</Text>
 
   return (
     <main>

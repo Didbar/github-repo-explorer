@@ -1,4 +1,4 @@
-import { FormControl, Input, Button } from '@chakra-ui/react'
+import { Button, FormControl, Input } from '@chakra-ui/react'
 import { FormEvent, useRef } from 'react'
 import useUserQueryStore from '../../store'
 

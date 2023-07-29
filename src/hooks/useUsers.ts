@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import UserClient, { FetchResponseUser } from '../services/user-client'
 import ms from 'ms'
+import { USERS_LIMIT } from '../constants'
+import UserClient, { FetchResponseUser } from '../services/user-client'
 import useUserQueryStore from '../store'
-import { UserLimit } from '../constants'
 
 const userClient = new UserClient()
 
@@ -16,7 +16,7 @@ const useUsers = () => {
       userClient.searchUsers({
         params: {
           q: userQuery.searchedUser,
-          per_page: userQuery.limit || UserLimit
+          per_page: userQuery.limit || USERS_LIMIT
         }
       }),
     staleTime: ms('1m')

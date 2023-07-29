@@ -7,11 +7,11 @@ import {
   Heading
 } from '@chakra-ui/react'
 import { useState } from 'react'
+import GithubUser from '../../entities/User'
 import useRepositories from '../../hooks/useRepositories'
 import Error from '../common/Error'
 import Loader from '../common/Loader'
 import RepositoryLits from './RepositoryLits'
-import GithubUser from '../../entities/User'
 
 interface UserProps {
   user: GithubUser
@@ -21,15 +21,11 @@ const User = ({ user }: UserProps) => {
   const { data, error, isLoading } = useRepositories(user.login)
   const [showDetails, setShowDetails] = useState(false)
 
-  const handleUsernameClick = () => {
-    setShowDetails(!showDetails)
-  }
-
   if (isLoading) return <Loader />
   if (error) return <Error>{error.message}</Error>
 
   return (
-    <AccordionItem onClick={handleUsernameClick}>
+    <AccordionItem onClick={() => setShowDetails(!showDetails)}>
       <Heading>
         <AccordionButton>
           <Box as='span' flex='1' textAlign='left'>

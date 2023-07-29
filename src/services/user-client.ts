@@ -1,14 +1,12 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import GithubUser from '../entities/User'
+import { GITHUB_BASE_URL } from '../constants'
 import GitHubRepository from '../entities/Repository'
-
-const BASE_URL = 'https://api.github.com'
-const ACCESS_TOKEN = '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'
+import GithubUser from '../entities/User'
 
 const axiosInstance = axios.create({
-  baseURL: BASE_URL,
+  baseURL: GITHUB_BASE_URL,
   headers: {
-    Authorization: `token ${ACCESS_TOKEN}`
+    Authorization: `token ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`
   }
 })
 

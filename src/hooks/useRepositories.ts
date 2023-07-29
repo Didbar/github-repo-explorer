@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import UserClient from '../services/user-client'
 import ms from 'ms'
 import GitHubRepository from '../entities/Repository'
+import UserClient from '../services/user-client'
 
 const userClient = new UserClient()
 
