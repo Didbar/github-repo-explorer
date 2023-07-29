@@ -1,112 +1,20 @@
-import {
-  Text,
-  VStack,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-  Heading
-} from '@chakra-ui/react'
-import RepositoryLits from './RepositoryLits'
+import { Text, VStack, Accordion, AccordionItem } from '@chakra-ui/react'
+import { GithubUser } from '../../services/user-client'
+import User from './User'
 
-const UserList = () => {
+interface UserListProps {
+  users: GithubUser[]
+}
+const UserList = ({ users }: UserListProps) => {
   return (
     <VStack w='100%' align='flex-start' my={2}>
       <Text fontSize='sm'>Showing users for 'User Here'</Text>
       <Accordion allowToggle w='100%' my={2}>
-        <AccordionItem>
-          <Heading>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                UserName1
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            <VStack maxH='325px' overflow='scroll'>
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-            </VStack>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <Heading>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                UserName1
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            <VStack maxH='325px' overflow='scroll'>
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-            </VStack>
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <Heading>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                UserName1
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            <VStack maxH='325px' overflow='scroll'>
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-            </VStack>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <Heading>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                UserName1
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            <VStack maxH='325px' overflow='scroll'>
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-            </VStack>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <Heading>
-            <AccordionButton>
-              <Box as='span' flex='1' textAlign='left'>
-                UserName1
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </Heading>
-          <AccordionPanel pb={4}>
-            <VStack maxH='325px' overflow='scroll'>
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-              <RepositoryLits />
-            </VStack>
-          </AccordionPanel>
-        </AccordionItem>
+        {users.map((user) => (
+          <AccordionItem key={user.id}>
+            <User user={user} />
+          </AccordionItem>
+        ))}
       </Accordion>
     </VStack>
   )

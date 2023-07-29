@@ -1,5 +1,5 @@
 import { HStack } from '@chakra-ui/react'
-import ThemeToggleButton from './ThemeToggleButton'
+import ThemeToggleButton from '../common/ThemeToggleButton'
 
 const Navbar = () => {
   return (
