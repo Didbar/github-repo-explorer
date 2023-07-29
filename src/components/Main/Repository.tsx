@@ -1,6 +1,6 @@
 import { HStack, Heading, Text } from '@chakra-ui/react'
 import { BsStarFill } from 'react-icons/bs'
-import { GitHubRepository } from '../../services/user-client'
+import GitHubRepository from '../../entities/Repository'
 
 interface RepositoryProps {
   repo: GitHubRepository

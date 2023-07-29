@@ -3,10 +3,12 @@ import useUsers from '../../hooks/useUsers'
 import Loader from '../common/Loader'
 import UserList from './UserList'
 import UserSearchForm from './UserSearchForm'
+import Error from '../common/Error'
+import { NoSearchQueryText } from '../../constants'
 
 const Main = () => {
   const { data, error, isLoading, isFetching } = useUsers()
-  const noDataAvailable = <Text>Search for users first</Text>
+  const noDataAvailable = <Text>{NoSearchQueryText}</Text>
 
   return (
     <main>
@@ -15,7 +17,7 @@ const Main = () => {
           <VStack minHeight='50vh'>
             <UserSearchForm />
             {isLoading && isFetching && <Loader />}
-            {error && <Text color='red'>{error.message}</Text>}
+            {error && <Error>{error.message}</Error>}
             {data ? <UserList users={data.items} /> : noDataAvailable}
           </VStack>
         </Container>

@@ -1,7 +1,7 @@
 import { Text, VStack, useColorModeValue } from '@chakra-ui/react'
-import { GitHubRepository } from '../../services/user-client'
 import Repository from './Repository'
 import { Fragment } from 'react'
+import GitHubRepository from '../../entities/Repository'
 
 interface RepositoryLitsProps {
   repositoryList: GitHubRepository[]

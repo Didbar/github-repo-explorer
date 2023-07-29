@@ -1,4 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
+import GithubUser from '../entities/User'
+import GitHubRepository from '../entities/Repository'
 
 const BASE_URL = 'https://api.github.com'
 const ACCESS_TOKEN = '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'
@@ -9,18 +11,6 @@ const axiosInstance = axios.create({
     Authorization: `token ${ACCESS_TOKEN}`
   }
 })
-
-export interface GithubUser {
-  id: number
-  login: string
-}
-
-export interface GitHubRepository {
-  id: number
-  name: string
-  description: string | null
-  stargazers_count: number
-}
 
 export interface FetchResponseUser {
   total_count: number

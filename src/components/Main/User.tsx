@@ -4,14 +4,14 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Heading,
-  Text
+  Heading
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import useRepositories from '../../hooks/useRepositories'
-import { GithubUser } from '../../services/user-client'
+import Error from '../common/Error'
 import Loader from '../common/Loader'
 import RepositoryLits from './RepositoryLits'
+import GithubUser from '../../entities/User'
 
 interface UserProps {
   user: GithubUser
@@ -26,7 +26,7 @@ const User = ({ user }: UserProps) => {
   }
 
   if (isLoading) return <Loader />
-  if (error) return <Text>{error.message}</Text>
+  if (error) return <Error>{error.message}</Error>
 
   return (
     <AccordionItem onClick={handleUsernameClick}>

@@ -1,9 +1,9 @@
 import { Text, VStack, Accordion } from '@chakra-ui/react'
-import { GithubUser } from '../../services/user-client'
 import User from './User'
 import { Fragment } from 'react'
 import { generateUserInfoText } from '../../utils/userUtils'
 import useUserQueryStore from '../../store'
+import GithubUser from '../../entities/User'
 
 interface UserListProps {
   users: GithubUser[]
