@@ -5,13 +5,11 @@ import useUsers from '../../hooks/useUsers'
 import Loader from '../common/Loader'
 
 const Main = () => {
-  const testUsername = 'didbar'
+  const testUsername = 'meta'
   const { data, error, isLoading } = useUsers(testUsername)
 
   if (isLoading) return <Loader />
   if (error) return <Text>{error.message}</Text>
-
-  if (data) console.log(data.items)
 
   return (
     <main>

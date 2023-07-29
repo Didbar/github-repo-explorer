@@ -4,9 +4,12 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-  Heading
+  Heading,
+  Text
 } from '@chakra-ui/react'
 import { GithubUser } from '../../services/user-client'
+import useRepositories from '../../hooks/useRepositories'
+import Loader from '../common/Loader'
 import RepositoryLits from './RepositoryLits'
 
 interface UserProps {
@@ -14,6 +17,11 @@ interface UserProps {
 }
 
 const User = ({ user }: UserProps) => {
+  const { data, error, isLoading } = useRepositories(user.login)
+
+  if (isLoading) return <Loader />
+  if (error) return <Text>{error.message}</Text>
+
   return (
     <>
       <Heading>
@@ -26,10 +34,7 @@ const User = ({ user }: UserProps) => {
       </Heading>
       <AccordionPanel pb={4}>
         <VStack maxH='325px' overflow='scroll'>
-          <RepositoryLits />
-          <RepositoryLits />
-          <RepositoryLits />
-          <RepositoryLits />
+          <RepositoryLits repositoryList={data} />
         </VStack>
       </AccordionPanel>
     </>

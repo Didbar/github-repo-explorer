@@ -18,6 +18,8 @@ export interface GithubUser {
 export interface GitHubRepository {
   id: number
   name: string
+  description: string | null
+  stargazers_count: number
 }
 
 export interface FetchResponseUser {
@@ -36,7 +38,7 @@ class UserClient {
 
   getUserRepositories = (username: string) => {
     return axiosInstance
-      .get(`/users/${encodeURIComponent(username)}/repos`)
+      .get<GitHubRepository[]>(`/users/${encodeURIComponent(username)}/repos`)
       .then((res) => res.data)
   }
 }
