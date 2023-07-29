@@ -6,7 +6,6 @@ interface RepositoryProps {
   repo: GitHubRepository
 }
 const Repository = ({ repo }: RepositoryProps) => {
-  console.log(repo)
   return (
     <>
       <HStack w='100%' justify='space-between'>

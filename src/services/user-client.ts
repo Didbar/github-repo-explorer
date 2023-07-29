@@ -29,6 +29,12 @@ export interface FetchResponseUser {
 
 class UserClient {
   searchUsers = (username: string) => {
+    if (!username)
+      return {
+        total_count: 0,
+        items: []
+      }
+
     return axiosInstance
       .get<FetchResponseUser>(
         `/search/users?q=${encodeURIComponent(username)}&per_page=5`

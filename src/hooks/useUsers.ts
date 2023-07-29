@@ -6,7 +6,7 @@ const userClient = new UserClient()
 
 const useUsers = (username: string) => {
   return useQuery<FetchResponseUser, Error>({
-    queryKey: ['users'],
+    queryKey: [username, 'users'],
     queryFn: () => userClient.searchUsers(username),
     staleTime: ms('1m')
   })
