@@ -1,20 +1,21 @@
 import { FormControl, Input, Button } from '@chakra-ui/react'
-import { useRef } from 'react'
+import { FormEvent, useRef } from 'react'
 
 interface Props {
   onSearch: (username: string) => void
 }
 const UserSearchForm = ({ onSearch }: Props) => {
   const usernameRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    if (usernameRef.current) {
+      onSearch(usernameRef.current.value)
+      usernameRef.current.value = ''
+    }
+  }
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        if (usernameRef.current) {
-          onSearch(usernameRef.current.value)
-          usernameRef.current.value = ''
-        }
-      }}>
+    <form onSubmit={handleSubmit} style={{ width: '100%' }}>
       <FormControl>
         <Input
           type='username'
