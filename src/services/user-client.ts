@@ -4,10 +4,7 @@ import GitHubRepository from '../entities/Repository'
 import GithubUser from '../entities/User'
 
 const axiosInstance = axios.create({
-  baseURL: GITHUB_BASE_URL,
-  headers: {
-    Authorization: `token ${import.meta.env.VITE_GITHUB_ACCESS_TOKEN}`
-  }
+  baseURL: GITHUB_BASE_URL
 })
 
 export interface FetchResponseUser {
