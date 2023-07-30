@@ -17,6 +17,7 @@ const ThemeToggleButton = () => {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}>
         <IconButton
+          role='theme-toggler'
           size='md'
           fontSize='lg'
           aria-label={`Switch to ${text} mode`}
