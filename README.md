@@ -32,21 +32,15 @@ The project is organized into the following main components:
    npm install
    ```
 
-3. Provide a valid GitHub access token in the environment variable `VITE_GITHUB_ACCESS_TOKEN`. This token is required for the application to authenticate with the GitHub API. You can set the token in your `.env` file as follows:
-
-   ```plaintext
-   VITE_GITHUB_ACCESS_TOKEN=your-github-access-token
-   ```
-
-4. Start the development server:
+3. Start the development server:
 
    ```bash
    npm start
    ```
 
-5. Open your browser and go to provided url in your terminal to access the app.
+4. Open your browser and go to provided url in your terminal to access the app.
 
-6. Enter a GitHub username in the search input to find and display repositories for the selected user.
+5. Enter a GitHub username in the search input to find and display repositories for the selected user.
 
 ## Libraries Used
 
