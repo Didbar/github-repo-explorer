@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
-import UserSearchForm from './UserSearchForm'
+import UserSearchForm from 'src/feature/Main/UserSearchForm'
 
 describe('UserSearchForm component', () => {
   test('component correctly shows input element', () => {

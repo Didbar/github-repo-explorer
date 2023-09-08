@@ -1,22 +1,24 @@
 import { HStack, Heading, Text } from '@chakra-ui/react'
 import { BsStarFill } from 'react-icons/bs'
-import GitHubRepository from '../../entities/Repository'
-import { REPO_HAS_NO_DESCRIPTION } from '../../constants'
+import { REPO_HAS_NO_DESCRIPTION } from 'src/constants'
+import GitHubRepository from 'src/entities/Repository'
 
 interface RepositoryProps {
   repo: GitHubRepository
 }
-const Repository = ({ repo }: RepositoryProps) => {
+const Repository = ({
+  repo: { name, stargazers_count, description }
+}: RepositoryProps) => {
   return (
     <>
       <HStack w='100%' justify='space-between'>
-        <Heading fontSize='md'>{repo.name}</Heading>
+        <Heading fontSize='md'>{name}</Heading>
         <HStack>
-          <Text>{repo.stargazers_count}</Text>
+          <Text>{stargazers_count}</Text>
           <BsStarFill role='star-icon' />
         </HStack>
       </HStack>
-      <Text>{repo.description ? repo.description : REPO_HAS_NO_DESCRIPTION}</Text>
+      <Text>{description || REPO_HAS_NO_DESCRIPTION}</Text>
     </>
   )
 }

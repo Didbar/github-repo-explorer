@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import ms from 'ms'
-import { USERS_LIMIT } from '../constants'
-import UserClient, { FetchResponseUser } from '../services/user-client'
-import useUserQueryStore from '../store'
+import { USERS_LIMIT } from 'src/constants'
+import UserClient, { FetchResponseUser } from 'src/services/user-client'
+import useUserQueryStore from 'src/store'
 
 const userClient = new UserClient()
 

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import ThemeToggleButton from './ThemeToggleButton'
+import ThemeToggleButton from 'src/components/ThemeToggleButton'
 
 describe('ThemeTogglerButton component', () => {
   test('correctly renders theme toggler icon', async () => {

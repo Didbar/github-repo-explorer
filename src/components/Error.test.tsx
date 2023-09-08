@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import Error from './Error'
+import { render, screen } from '@testing-library/react'
+import Error from 'src/components/Error'
 
 describe('Error component', () => {
   test('renders the error message correctly', () => {

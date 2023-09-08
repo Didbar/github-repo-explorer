@@ -1,4 +1,4 @@
-import { generateUserInfoText } from './userUtils' // Replace 'your-file-path' with the actual path to the file containing the function
+import { generateUserInfoText } from 'src/utils/userUtils' // Replace 'your-file-path' with the actual path to the file containing the function
 
 describe('generateUserInfoText function', () => {
   test('returns "Search for users to get data" when username is undefined', () => {

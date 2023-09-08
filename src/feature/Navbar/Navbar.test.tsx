@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import Navbar from './Navbar'
+import Navbar from 'src/feature/Navbar'
 
 vi.mock('../common/ThemeToggleButton.tsx', () => ({
   default: () => 'Mocked ThemeToggleButton'

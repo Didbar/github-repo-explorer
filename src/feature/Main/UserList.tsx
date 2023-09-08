@@ -1,9 +1,8 @@
-import { Text, VStack, Accordion } from '@chakra-ui/react'
-import User from './User'
-import { Fragment } from 'react'
-import { generateUserInfoText } from '../../utils/userUtils'
-import useUserQueryStore from '../../store'
-import GithubUser from '../../entities/User'
+import { Accordion, Text, VStack } from '@chakra-ui/react'
+import GithubUser from 'src/entities/User'
+import User from 'src/feature/Main/User'
+import useUserQueryStore from 'src/store'
+import { generateUserInfoText } from 'src/utils/userUtils'
 
 interface UserListProps {
   users: GithubUser[]
@@ -15,9 +14,7 @@ const UserList = ({ users }: UserListProps) => {
       <Text fontSize='sm'>{generateUserInfoText(searchedUser)}</Text>
       <Accordion allowToggle w='100%' my={2}>
         {users.map((user) => (
-          <Fragment key={user.id}>
-            <User user={user} />
-          </Fragment>
+          <User user={user} key={user.id} />
         ))}
       </Accordion>
     </VStack>

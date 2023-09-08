@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { GITHUB_BASE_URL } from '../constants'
-import GitHubRepository from '../entities/Repository'
-import GithubUser from '../entities/User'
+import { GITHUB_BASE_URL } from 'src/constants'
+import GitHubRepository from 'src/entities/Repository'
+import GithubUser from 'src/entities/User'
 
 const axiosInstance = axios.create({
   baseURL: GITHUB_BASE_URL

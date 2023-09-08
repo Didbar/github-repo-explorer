@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
-import { NO_DATA_AVAILABLE } from '../../constants'
-import GitHubRepository from '../../entities/Repository'
-import RepositoryList from './RepositoryLits'
+import { NO_DATA_AVAILABLE } from 'src/constants'
+import GitHubRepository from 'src/entities/Repository'
+import RepositoryList from 'src/feature/Main/RepositoryLits'
 
 const mockRepositoryList: GitHubRepository[] = [
   {

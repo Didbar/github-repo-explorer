@@ -1,6 +1,6 @@
 import { Button, FormControl, Input } from '@chakra-ui/react'
 import { FormEvent, useRef } from 'react'
-import useUserQueryStore from '../../store'
+import useUserQueryStore from 'src/store'
 
 const UserSearchForm = () => {
   const usernameRef = useRef<HTMLInputElement>(null)

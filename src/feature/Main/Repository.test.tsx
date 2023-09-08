@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import { render, screen } from '@testing-library/react'
-import { REPO_HAS_NO_DESCRIPTION } from '../../constants'
-import Repository from './Repository'
+import { REPO_HAS_NO_DESCRIPTION } from 'src/constants'
+import Repository from 'src/feature/Main/Repository'
 
 function renderComponent(desc = 'Test Repository Description') {
   const mockRepo = {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Loader from './Loader'
+import Loader from 'src/components/Loader'
 
 describe('Loader component', () => {
   test('correctly renders loader', async () => {

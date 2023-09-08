@@ -6,30 +6,28 @@ import {
   Box,
   Heading
 } from '@chakra-ui/react'
-import { useState } from 'react'
-import GithubUser from '../../entities/User'
-import useRepositories from '../../hooks/useRepositories'
-import Error from '../common/Error'
-import Loader from '../common/Loader'
-import RepositoryLits from './RepositoryLits'
+import Error from 'src/components/Error'
+import Loader from 'src/components/Loader'
+import GithubUser from 'src/entities/User'
+import useRepositories from 'src/hooks/useRepositories'
+import RepositoryLits from 'src/feature/Main/RepositoryLits'
 
 interface UserProps {
   user: GithubUser
 }
 
-const User = ({ user }: UserProps) => {
-  const { data, error, isLoading } = useRepositories(user.login)
-  const [showDetails, setShowDetails] = useState(false)
+const User = ({ user: { login } }: UserProps) => {
+  const { data, error, isLoading } = useRepositories(login)
 
   if (isLoading) return <Loader />
   if (error) return <Error>{error.message}</Error>
 
   return (
-    <AccordionItem onClick={() => setShowDetails(!showDetails)}>
+    <AccordionItem>
       <Heading>
         <AccordionButton>
           <Box as='span' flex='1' textAlign='left'>
-            {user.login}
+            {login}
           </Box>
           <AccordionIcon />
         </AccordionButton>

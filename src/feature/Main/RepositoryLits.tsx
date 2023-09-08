@@ -1,14 +1,14 @@
 import { Text, VStack, useColorModeValue } from '@chakra-ui/react'
 import { Fragment } from 'react'
-import { NO_DATA_AVAILABLE } from '../../constants'
-import GitHubRepository from '../../entities/Repository'
-import Repository from './Repository'
+import { NO_DATA_AVAILABLE } from 'src/constants'
+import GitHubRepository from 'src/entities/Repository'
+import Repository from 'src/feature/Main/Repository'
 
 interface RepositoryLitsProps {
   repositoryList: GitHubRepository[]
 }
 const RepositoryLits = ({ repositoryList }: RepositoryLitsProps) => {
-  const AccordionPanelBackground = useColorModeValue('gray.200', 'gray.900')
+  const accordionPanelBackground = useColorModeValue('gray.200', 'gray.900')
 
   if (repositoryList.length === 0) return <Text>{NO_DATA_AVAILABLE}</Text>
 
@@ -17,7 +17,7 @@ const RepositoryLits = ({ repositoryList }: RepositoryLitsProps) => {
       w='100%'
       overflow='scroll'
       p='1rem 0.5rem'
-      bg={AccordionPanelBackground}
+      bg={accordionPanelBackground}
       align='flex-start'
       borderRadius='4px'>
       {repositoryList.map((repo) => (
